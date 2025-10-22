@@ -1,48 +1,13 @@
 import java.util.Scanner;
 void main() {
-   /* Scanner input = new Scanner(System.in);
-    int mat,fizik,kimya,turkce,tarih,muzik;
 
-    System.out.print("Matematik Notunuzu giriniz: ");
-    mat=input.nextInt();
+   Scanner input = new Scanner(System.in);
+    int km;
+    double perKm = 2.20, total = 10.0;
+   System.out.print("Mesafeyi Km cinsinden  giriniz: ");
+   km = input.nextInt();
 
-    System.out.print("Fizik Notunuzu giriniz: ");
-    fizik=input.nextInt();
-
-    System.out.print("Kimya Notunuzu giriniz: ");
-    kimya=input.nextInt();
-
-    System.out.print("Türkçe Notunuzu giriniz: ");
-    turkce=input.nextInt();
-
-    System.out.print("Tarih Notunuzu giriniz: ");
-    tarih=input.nextInt();
-
-    System.out.print("Müzik Notunuzu giriniz: ");
-    muzik=input.nextInt();
-
-    int toplam = mat+fizik+kimya+turkce+tarih+muzik;
-    double ort = toplam/6.0;
-    String sonuc = ort>60? "Sınıfı Geçti":"Sınıfta Kaldı";
-    System.out.print(sonuc);*/
-
-
-
-
-    Scanner input = new Scanner(System.in);
-    double tutar, kdvOran =0.0 , kdvTutar, kdvliTutar;
-
-    System.out.print("Lütfen ücret tutarını giriniz: ");
-    tutar = input.nextDouble();
-
-    kdvOran= 0.0 < tutar && tutar < 1000.0 ? 0.18: 0.08;
-
-    kdvTutar= tutar* kdvOran;
-    kdvliTutar= tutar+ kdvTutar;
-
-    System.out.println("Tutar: "+ tutar);
-    System.out.println("KDV Oranı: "+ kdvOran);
-    System.out.println("KDV Tutarı: "+ kdvTutar);
-    System.out.println("KDV'li Tutar: "+ kdvliTutar);
-
+   total += (km * perKm);
+   total = total < 20.0 ? 20.0: total;
+   System.out.print("Toplam Tutar: " + total);
 }

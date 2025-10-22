@@ -1,6 +1,6 @@
 import java.util.Scanner;
 void main() {
-    Scanner input = new Scanner(System.in);
+   /* Scanner input = new Scanner(System.in);
     int mat,fizik,kimya,turkce,tarih,muzik;
 
     System.out.print("Matematik Notunuzu giriniz: ");
@@ -24,6 +24,25 @@ void main() {
     int toplam = mat+fizik+kimya+turkce+tarih+muzik;
     double ort = toplam/6.0;
     String sonuc = ort>60? "Sınıfı Geçti":"Sınıfta Kaldı";
-    System.out.print(sonuc);
+    System.out.print(sonuc);*/
+
+
+
+
+    Scanner input = new Scanner(System.in);
+    double tutar, kdvOran =0.0 , kdvTutar, kdvliTutar;
+
+    System.out.print("Lütfen ücret tutarını giriniz: ");
+    tutar = input.nextDouble();
+
+    kdvOran= 0.0 < tutar && tutar < 1000.0 ? 0.18: 0.08;
+
+    kdvTutar= tutar* kdvOran;
+    kdvliTutar= tutar+ kdvTutar;
+
+    System.out.println("Tutar: "+ tutar);
+    System.out.println("KDV Oranı: "+ kdvOran);
+    System.out.println("KDV Tutarı: "+ kdvTutar);
+    System.out.println("KDV'li Tutar: "+ kdvliTutar);
 
 }

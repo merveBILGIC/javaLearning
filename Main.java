@@ -1,32 +1,60 @@
 import java.util.Scanner;
-void main() {
-   int n1, n2, select;
-   Scanner input = new Scanner(System.in);
-   System.out.print("ilk sayısı giriniz: ");
-   n1= input.nextInt();
-    System.out.print("ikinci sayısı giriniz: ");
-    n2= input.nextInt();
 
-    System.out.println("Lütfen işlemi seçiniz \n Toplama:1 \n Çıkarma:2\n Çarpma:3 \n Bölme:4 ");
-    select=input.nextInt();
+public class Main {
+    public static void main(String[] args) {
 
-    switch (select){
-        case 1:
-            System.out.print("Seçilen işlem toplama:"+ n1+n2 );
-            break;
+        Scanner input = new Scanner(System.in);
+        int math, physics, turkish, chemistry, music;
+        int total = 0, count = 0;
 
-        case 2:
-            System.out.print("Seçilen işlem Çıkarma:" + (n1-n2 ));
-            break;
-        case 3:
-            System.out.print("Seçilen işlem Çarpma:" + (n1*n2 ));
-            break;
-        case 4:
-            if (n2==0){ System.out.print("Bir sayı sıfıra bölünemez." ); break; }
+        System.out.print("Matematik notu: ");
+        math = input.nextInt();
+        if (math >= 0 && math <= 100) {
+            total += math;
+            count++;
+        }
 
-            System.out.print("Seçilen işlem Bölme:" + (n1/ n2 ));
-            break;
-        default:
-            System.out.print("Yanlış seçim yapıldı!:");
+        System.out.print("Fizik notu: ");
+        physics = input.nextInt();
+        if (physics >= 0 && physics <= 100) {
+            total += physics;
+            count++;
+        }
+
+        System.out.print("Türkçe notu: ");
+        turkish = input.nextInt();
+        if (turkish >= 0 && turkish <= 100) {
+            total += turkish;
+            count++;
+        }
+
+        System.out.print("Kimya notu: ");
+        chemistry = input.nextInt();
+        if (chemistry >= 0 && chemistry <= 100) {
+            total += chemistry;
+            count++;
+        }
+
+        System.out.print("Müzik notu: ");
+        music = input.nextInt();
+        if (music >= 0 && music <= 100) {
+            total += music;
+            count++;
+        }
+
+        if (count == 0) {
+            System.out.println("Geçerli not girilmedi, ortalama hesaplanamıyor!");
+            return;
+        }
+
+        double average = total / (double) count;
+
+        System.out.println("Ortalamanız: " + average);
+
+        if (average >= 55) {
+            System.out.println("Tebrikler, geçtiniz!");
+        } else {
+            System.out.println("Kaldınız!");
+        }
     }
 }
